@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="City Center Café — Kafe cilësore në zemër të Fierit. Fast coffee, central location.">
+<meta name="keywords" content="city center café fier, coffee near me, kafe fier, café qendër fier">
+<meta name="theme-color" content="#ffffff">
+<title>City Center Café — Fier</title>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"City Center Café","address":{"@type":"PostalAddress","addressLocality":"Fier","addressCountry":"AL"},"geo":{"@type":"GeoCoordinates","latitude":40.7279234,"longitude":19.5607368},"openingHours":["Mo-Su 07:00-23:00"],"priceRange":"€"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   RESET & BASE
+══════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',sans-serif;
+  background:#fff;color:#111;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.6;overflow-x:hidden;
+}
+:root{
+  --black:#0d0d0d;
+  --dark:#1a1a1a;
+  --mid:#777;
+  --light:#bbb;
+  --border:#ebebeb;
+  --cream:#f8f4ef;
+  --cream2:#f0e9e0;
+  --accent:#8b5e3c;
+  --green:#2a9050;
+  --red:#b03030;
+  --amber:#b87010;
+  --wolt:#009de0;
+  --serif:'Playfair Display',serif;
+  --sans:'Inter',sans-serif;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+/* ══════════════════════════════════════
+   TYPOGRAPHY
+══════════════════════════════════════ */
+.t-label{
+  font-size:0.62rem;font-weight:600;
+  letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--mid);
+}
+h1{
+  font-family:var(--serif);
+  font-size:clamp(2.6rem,12vw,5rem);
+  line-height:1.04;font-weight:400;
+  letter-spacing:-0.02em;
+}
+h1 em{font-style:italic;color:var(--accent)}
+h2{
+  font-family:var(--serif);
+  font-size:clamp(1.7rem,7vw,2.4rem);
+  font-weight:400;line-height:1.15;
+}
+h2 em{font-style:italic;color:var(--accent)}
+
+/* ══════════════════════════════════════
+   BUTTONS
+══════════════════════════════════════ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:0.4rem;
+  padding:0.85rem 1.5rem;border-radius:3px;
+  font-family:var(--sans);font-size:0.8rem;font-weight:600;
+  letter-spacing:0.08em;text-transform:uppercase;
+  border:none;cursor:pointer;
+  transition:all 0.2s ease;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+.btn:active{transform:scale(0.96)}
+.btn-black{background:var(--black);color:#fff}
+.btn-black:hover{background:#2a2a2a}
+.btn-outline{background:transparent;color:var(--black);border:1.5px solid var(--black)}
+.btn-outline:hover{background:var(--black);color:#fff}
+.btn-cream{background:var(--cream);color:var(--black);border:1px solid var(--border)}
+.btn-cream:hover{background:var(--cream2)}
+.btn-wolt{background:var(--wolt);color:#fff}
+.btn-wolt:hover{background:#007ab8}
+.btn-white{background:#fff;color:var(--black)}
+.btn-outline-w{background:transparent;color:rgba(255,255,255,0.65);border:1.5px solid rgba(255,255,255,0.22)}
+.btn-outline-w:hover{color:#fff;border-color:rgba(255,255,255,0.5)}
+.btn-full{width:100%;padding:1rem}
+
+/* ══════════════════════════════════════
+   NAV
+══════════════════════════════════════ */
+#nav{
+  position:sticky;top:0;z-index:100;
+  height:56px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 1.25rem;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  transition:box-shadow 0.25s;
+}
+#nav.up{box-shadow:0 2px 16px rgba(0,0,0,0.06)}
+.nav-logo{
+  font-family:var(--serif);font-size:1.05rem;
+  color:var(--black);cursor:pointer;letter-spacing:0.03em;
+  line-height:1.15;
+}
+.nav-logo small{
+  display:block;font-family:var(--sans);
+  font-size:0.54rem;font-weight:600;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--mid);margin-top:1px;
+}
+.nav-desktop{display:flex;align-items:center;gap:1.75rem;list-style:none}
+.nav-desktop a{
+  font-size:0.72rem;font-weight:500;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--mid);cursor:pointer;
+  transition:color 0.18s;
+}
+.nav-desktop a:hover{color:var(--black)}
+
+.burger{
+  display:flex;flex-direction:column;gap:5px;
+  background:none;border:none;cursor:pointer;
+  padding:6px;-webkit-tap-highlight-color:transparent;
+}
+.burger span{
+  display:block;width:21px;height:1.5px;
+  background:var(--black);border-radius:2px;
+  transition:all 0.25s;
+}
+.burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+.drawer{
+  position:fixed;top:56px;left:0;right:0;z-index:99;
+  background:#fff;border-bottom:1px solid var(--border);
+  transform:translateY(-110%);
+  transition:transform 0.28s cubic-bezier(0.4,0,0.2,1);
+  box-shadow:0 8px 30px rgba(0,0,0,0.08);
+}
+.drawer.open{transform:translateY(0)}
+.drawer a{
+  display:block;padding:1rem 1.5rem;
+  font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--mid);border-bottom:1px solid var(--border);
+  cursor:pointer;transition:color 0.18s,padding-left 0.2s;
+}
+.drawer a:last-child{border-bottom:none}
+.drawer a:hover{color:var(--black);padding-left:2rem}
+
+@media(max-width:767px){.nav-desktop{display:none}}
+@media(min-width:768px){.burger{display:none}.drawer{display:none}}
+
+/* ══════════════════════════════════════
+   HERO
+══════════════════════════════════════ */
+#home{
+  background:var(--cream);
+  padding:2.5rem 1.5rem 3rem;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden;
+  min-height:100svh;
+}
+@media(min-width:768px){
+  #home{min-height:calc(100svh - 56px);justify-content:flex-end}
+}
+@media(max-width:767px){
+  #home{min-height:calc(100svh - 56px)}
+}
+.hero-circle{
+  position:absolute;
+  width:min(340px,80vw);height:min(340px,80vw);
+  border-radius:50%;
+  border:1px solid rgba(139,94,60,0.1);
+  top:-60px;right:-80px;
+  pointer-events:none;
+}
+.hero-circle::before{
+  content:'';position:absolute;inset:30px;border-radius:50%;
+  border:1px solid rgba(139,94,60,0.07);
+}
+.hero-line-v{
+  position:absolute;right:2rem;top:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom,transparent,var(--border) 30%,var(--border) 70%,transparent);
+  pointer-events:none;
+  display:none;
+}
+.hero-eyebrow{
+  display:flex;align-items:center;gap:0.65rem;
+  margin-bottom:1.25rem;
+}
+.hero-eyebrow::before{content:'';width:22px;height:1px;background:var(--mid)}
+.hero-desc{
+  margin-top:1.1rem;font-size:0.95rem;color:var(--mid);
+  font-weight:300;line-height:1.75;max-width:360px;
+}
+.hero-btns{
+  display:flex;flex-direction:column;gap:0.65rem;
+  margin-top:2rem;
+}
+.hero-btns .btn{font-size:0.82rem;padding:0.9rem 1.5rem}
+@media(min-width:420px){
+  .hero-btns{flex-direction:row;flex-wrap:wrap}
+}
+.hero-status{
+  display:flex;align-items:center;gap:0.5rem;
+  margin-top:2rem;font-size:0.72rem;color:var(--mid);
+}
+.dot{
+  width:7px;height:7px;border-radius:50%;flex-shrink:0;
+}
+.dot.open{background:var(--green);animation:glow 2s infinite}
+.dot.warn{background:var(--amber)}
+.dot.closed{background:var(--red)}
+@keyframes glow{
+  0%,100%{box-shadow:0 0 0 3px rgba(42,144,80,0.18)}
+  50%{box-shadow:0 0 0 7px rgba(42,144,80,0.05)}
+}
+@media(min-width:768px){.hero-line-v{display:block}}
+
+/* ══════════════════════════════════════
+   INFO STRIP
+══════════════════════════════════════ */
+#strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.strip-inner{display:flex;flex-direction:column}
+@media(min-width:640px){.strip-inner{flex-direction:row}}
+.si{
+  padding:1.1rem 1.5rem;
+  border-bottom:1px solid var(--border);
+  text-decoration:none;
+  transition:background 0.18s;
+  display:flex;flex-direction:column;gap:0.2rem;
+  -webkit-tap-highlight-color:transparent;
+}
+.si:last-child{border-bottom:none}
+@media(min-width:640px){
+  .si{flex:1;border-bottom:none;border-right:1px solid var(--border)}
+  .si:last-child{border-right:none}
+}
+.si.tap:hover,.si.tap:active{background:var(--cream)}
+.si-lbl{font-size:0.58rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid)}
+.si-val{font-size:0.9rem;font-weight:500;color:var(--black)}
+.si-sub{font-size:0.68rem;color:var(--mid)}
+
+/* ══════════════════════════════════════
+   SECTIONS
+══════════════════════════════════════ */
+.sec{padding:3.5rem 1.5rem}
+@media(min-width:768px){.sec{padding:5rem 2.5rem}}
+.sec-label{font-size:0.62rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mid);margin-bottom:0.9rem}
+.divider{height:1px;background:var(--border)}
+
+/* ══════════════════════════════════════
+   MENU (preview tabs + rows)
+══════════════════════════════════════ */
+#menu{background:#fff}
+.tabs{
+  display:flex;border-bottom:1px solid var(--border);
+  margin:1.75rem 0 0;overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  padding:0.7rem 1.1rem;white-space:nowrap;
+  font-family:var(--sans);font-size:0.72rem;font-weight:600;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--mid);background:transparent;border:none;
+  border-bottom:2px solid transparent;margin-bottom:-1px;
+  cursor:pointer;transition:all 0.18s;
+  -webkit-tap-highlight-color:transparent;
+  flex-shrink:0;
+}
+.tab.on{color:var(--black);border-bottom-color:var(--black)}
+.tab:hover:not(.on){color:var(--black)}
+.panel{display:none}
+.panel.on{display:block}
+.mrow{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  padding:1rem 0;border-bottom:1px solid var(--border);gap:1rem;
+}
+.mrow:last-child{border-bottom:none}
+.mn{font-size:0.9rem;font-weight:500;color:var(--black)}
+.md{font-size:0.72rem;color:var(--mid);margin-top:0.1rem;font-weight:300;line-height:1.5}
+.mp{font-size:0.88rem;font-weight:600;color:var(--accent);flex-shrink:0;padding-top:0.05rem}
+.ptag{
+  display:inline-block;font-size:0.5rem;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  background:var(--cream2);color:var(--accent);
+  padding:0.1rem 0.35rem;border-radius:2px;margin-left:0.35rem;
+  vertical-align:middle;
+}
+.menu-cta{margin-top:2rem}
+
+/* ══════════════════════════════════════
+   WHY
+══════════════════════════════════════ */
+#why{background:var(--cream)}
+.why-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  margin-top:2rem;
+  background:var(--border);
+  border:1px solid var(--border);
+  border-radius:2px;overflow:hidden;
+}
+@media(min-width:640px){.why-grid{grid-template-columns:repeat(4,1fr)}}
+.wi{
+  background:#fff;padding:1.5rem 1.25rem;
+  transition:background 0.2s;
+}
+.wi:hover{background:var(--cream)}
+.wn{
+  font-family:var(--serif);font-size:2rem;color:var(--cream2);
+  line-height:1;margin-bottom:0.75rem;font-weight:400;
+  transition:color 0.2s;
+}
+.wi:hover .wn{color:var(--cream2)}
+.wt{font-size:0.8rem;font-weight:600;color:var(--black);margin-bottom:0.3rem}
+.wx{font-size:0.73rem;color:var(--mid);line-height:1.6}
+
+/* ══════════════════════════════════════
+   WOLT SECTION
+══════════════════════════════════════ */
+#wolt-sec{
+  background:var(--black);
+  padding:2.5rem 1.5rem;
+  display:flex;flex-direction:column;gap:1.25rem;
+}
+@media(min-width:640px){
+  #wolt-sec{flex-direction:row;align-items:center;justify-content:space-between;padding:2.5rem 2.5rem}
+}
+.wolt-badge{
+  display:inline-block;
+  background:var(--wolt);color:#fff;
+  font-size:0.58rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;
+  padding:0.25rem 0.6rem;border-radius:2px;margin-bottom:0.65rem;
+}
+.wolt-title{
+  font-family:var(--serif);font-size:1.6rem;color:#fff;
+  font-weight:400;line-height:1.2;
+}
+.wolt-desc{font-size:0.82rem;color:rgba(255,255,255,0.45);margin-top:0.4rem;font-weight:300}
+.btn-wolt-lg{
+  background:var(--wolt);color:#fff;
+  font-size:0.84rem;padding:1rem 2rem;
+  width:100%;
+}
+@media(min-width:640px){.btn-wolt-lg{width:auto}}
+.btn-wolt-lg:hover{background:#007ab8;transform:translateY(-2px)}
+
+/* ══════════════════════════════════════
+   LOCATION
+══════════════════════════════════════ */
+#location{background:#fff}
+.map-box{
+  margin-top:1.75rem;
+  border-radius:3px;overflow:hidden;
+  border:1px solid var(--border);
+}
+.map-box iframe{width:100%;height:260px;display:block;border:none}
+@media(min-width:768px){.map-box iframe{height:340px}}
+.loc-meta{
+  display:flex;flex-direction:column;gap:0;
+  margin-top:1.5rem;
+  border:1px solid var(--border);border-radius:2px;overflow:hidden;
+}
+.loc-row{
+  display:flex;align-items:center;gap:0.75rem;
+  padding:1rem 1.25rem;border-bottom:1px solid var(--border);
+  font-size:0.85rem;color:var(--black);
+  text-decoration:none;
+  transition:background 0.18s;
+  -webkit-tap-highlight-color:transparent;
+}
+.loc-row:last-child{border-bottom:none}
+.loc-row.tap:hover,.loc-row.tap:active{background:var(--cream)}
+.loc-row .icon{font-size:1rem;width:22px;text-align:center;flex-shrink:0}
+.loc-row strong{display:block;font-weight:500}
+.loc-row small{font-size:0.7rem;color:var(--mid)}
+.loc-actions{display:flex;flex-direction:column;gap:0.6rem;margin-top:1.25rem}
+@media(min-width:480px){.loc-actions{flex-direction:row}}
+
+/* ══════════════════════════════════════
+   CTA DARK
+══════════════════════════════════════ */
+#cta{
+  background:var(--black);
+  padding:4rem 1.5rem;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+#cta::before{
+  content:'City Center';
+  position:absolute;
+  font-family:var(--serif);font-size:clamp(5rem,22vw,14rem);
+  color:rgba(255,255,255,0.025);
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  white-space:nowrap;pointer-events:none;letter-spacing:0.03em;
+}
+#cta h2{color:#fff;position:relative;font-weight:400}
+#cta h2 em{color:rgba(255,255,255,0.35)}
+#cta p{font-size:0.88rem;color:rgba(255,255,255,0.38);margin-top:0.65rem;font-weight:300;position:relative}
+.cta-btns{
+  display:flex;flex-direction:column;gap:0.65rem;
+  margin-top:2rem;position:relative;
+}
+@media(min-width:420px){.cta-btns{flex-direction:row;justify-content:center;flex-wrap:wrap}}
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+footer{
+  background:#fff;border-top:1px solid var(--border);
+  padding:2rem 1.5rem;
+}
+.ft-top{
+  display:flex;flex-direction:column;gap:1.25rem;
+  padding-bottom:1.5rem;margin-bottom:1.5rem;
+  border-bottom:1px solid var(--border);
+}
+@media(min-width:560px){.ft-top{flex-direction:row;justify-content:space-between;align-items:center}}
+.ft-logo{font-family:var(--serif);font-size:1rem;color:var(--black);cursor:pointer;letter-spacing:0.03em}
+.ft-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+.ft-links a{font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);cursor:pointer;transition:color 0.18s}
+.ft-links a:hover{color:var(--black)}
+.ft-copy{font-size:0.67rem;color:var(--light)}
+
+/* ══════════════════════════════════════
+   FULL MENU PAGE
+══════════════════════════════════════ */
+.page-wrap{padding:calc(56px + 2rem) 1.5rem 5rem}
+@media(min-width:768px){.page-wrap{padding-left:2.5rem;padding-right:2.5rem;max-width:760px}}
+.back-btn{
+  display:inline-flex;align-items:center;gap:0.35rem;
+  font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--mid);background:none;border:none;
+  font-family:var(--sans);cursor:pointer;padding:0;
+  margin-bottom:2rem;transition:color 0.18s;
+}
+.back-btn:hover{color:var(--black)}
+.fc{margin-bottom:1rem}
+.fc-title{
+  font-size:0.58rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--accent);padding-bottom:0.65rem;
+  border-bottom:1px solid var(--border);margin-bottom:0.25rem;
+}
+
+/* Full-menu category tabs (chips) */
+.cat-tabs{
+  display:flex;gap:0.5rem;flex-wrap:wrap;
+  margin:1.75rem 0 0.5rem;
+}
+.cat-tab{
+  padding:0.5rem 1rem;
+  font-family:var(--sans);font-size:0.7rem;font-weight:600;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--mid);background:var(--cream);
+  border:1px solid var(--border);border-radius:100px;
+  cursor:pointer;transition:all 0.18s;
+  -webkit-tap-highlight-color:transparent;
+}
+.cat-tab.on{background:var(--black);color:#fff;border-color:var(--black)}
+.cat-tab:hover:not(.on){border-color:var(--black);color:var(--black)}
+.cat-panel{display:none;margin-top:1.5rem}
+.cat-panel.on{display:block}
+
+/* Alcohol sub-categories */
+.subcat-tabs{
+  display:flex;gap:0.4rem;flex-wrap:wrap;
+  margin-bottom:1.5rem;
+}
+.subcat-tab{
+  padding:0.4rem 0.85rem;
+  font-family:var(--sans);font-size:0.65rem;font-weight:600;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--accent);background:var(--cream2);
+  border:1px solid transparent;border-radius:100px;
+  cursor:pointer;transition:all 0.18s;
+  -webkit-tap-highlight-color:transparent;
+}
+.subcat-tab.on{background:var(--accent);color:#fff}
+.subcat-tab:hover:not(.on){background:#e9ddcd}
+.subcat-panel{display:none}
+.subcat-panel.on{display:block}
+
+/* ══════════════════════════════════════
+   CONTACT PAGE
+══════════════════════════════════════ */
+.contact-cards{
+  display:flex;flex-direction:column;gap:0;
+  margin-top:1.75rem;
+  border:1px solid var(--border);border-radius:2px;overflow:hidden;
+}
+.cc{padding:1.5rem 1.25rem;border-bottom:1px solid var(--border)}
+.cc:last-child{border-bottom:none}
+.cc-lbl{font-size:0.58rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:0.85rem}
+.cl{
+  display:flex;align-items:center;gap:0.65rem;
+  padding:0.7rem 0;border-bottom:1px solid var(--border);
+  font-size:0.85rem;color:var(--black);text-decoration:none;
+  transition:color 0.18s;-webkit-tap-highlight-color:transparent;
+}
+.cl:last-child{border-bottom:none}
+.cl.tap:hover{color:var(--accent)}
+.cl .icon{width:22px;text-align:center;font-size:1rem;flex-shrink:0}
+.cl strong{display:block;font-weight:500}
+.cl small{font-size:0.68rem;color:var(--mid);display:block}
+
+/* FORM */
+.form-wrap{margin-top:2.5rem}
+.form-row{display:grid;grid-template-columns:1fr;gap:0.85rem}
+@media(min-width:480px){.form-row{grid-template-columns:1fr 1fr}}
+.ff{display:flex;flex-direction:column;gap:0.35rem}
+.ff.full{grid-column:1/-1}
+.ff label{font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--mid)}
+.ff input,.ff textarea{
+  font-family:var(--sans);font-size:0.88rem;color:var(--black);
+  background:#fff;border:1.5px solid var(--border);
+  border-radius:2px;padding:0.8rem 0.9rem;
+  outline:none;resize:none;
+  transition:border-color 0.2s,box-shadow 0.2s;
+  -webkit-appearance:none;
+}
+.ff input:focus,.ff textarea:focus{
+  border-color:var(--black);
+  box-shadow:0 0 0 3px rgba(0,0,0,0.05);
+}
+.form-success{
+  display:none;padding:1.5rem;background:var(--cream);
+  border:1px solid var(--border);border-radius:2px;margin-top:0.5rem;
+}
+
+/* ══════════════════════════════════════
+   STICKY BOTTOM BAR — MOBILE ONLY
+══════════════════════════════════════ */
+#mob-bar{
+  display:none;
+  position:fixed;bottom:0;left:0;right:0;z-index:200;
+  background:rgba(255,255,255,0.98);
+  backdrop-filter:blur(16px);
+  border-top:1px solid var(--border);
+  padding:0.55rem 0.85rem;
+  padding-bottom:calc(0.55rem + env(safe-area-inset-bottom));
+  gap:0.5rem;
+}
+.mb{
+  flex:1;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:0.2rem;
+  padding:0.55rem 0.25rem;border-radius:3px;border:none;
+  cursor:pointer;font-family:var(--sans);text-decoration:none;
+  transition:opacity 0.18s;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+.mb:active{opacity:0.75}
+.mb-dir{background:var(--black);color:#fff}
+.mb-menu{background:var(--cream);color:var(--black);border:1px solid var(--border)}
+.mb-wolt{background:var(--wolt);color:#fff}
+.mb-icon{font-size:1.1rem;line-height:1}
+.mb-lbl{font-size:0.54rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase}
+@media(max-width:767px){
+  #mob-bar{display:flex}
+  body{padding-bottom:calc(70px + env(safe-area-inset-bottom))}
+}
+
+/* ══════════════════════════════════════
+   PAGES
+══════════════════════════════════════ */
+#pg-home,#pg-menu,#pg-contact{display:none}
+#pg-home.on,#pg-menu.on,#pg-contact.on{display:block}
+
+/* ══════════════════════════════════════
+   SCROLL REVEAL
+══════════════════════════════════════ */
+.rv{opacity:0;transform:translateY(20px);transition:opacity 0.55s ease,transform 0.55s ease}
+.rv.in{opacity:1;transform:translateY(0)}
+.rv.d1{transition-delay:.06s}.rv.d2{transition-delay:.12s}
+.rv.d3{transition-delay:.18s}.rv.d4{transition-delay:.24s}
+</style>
+</head>
+<body>
+
+<!-- ════════ NAV ════════ -->
+<nav id="nav">
+  <div class="nav-logo" onclick="go('home')">
+    City Center
+    <small>Café — Fier</small>
+  </div>
+  <ul class="nav-desktop">
+    <li><a onclick="sec('menu')">Menu</a></li>
+    <li><a onclick="sec('location')">Location</a></li>
+    <li><a onclick="go('contact')">Contact</a></li>
+  </ul>
+  <button class="burger" id="burger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="drawer" id="drawer">
+  <a onclick="sec('menu');cd()">Menu</a>
+  <a onclick="sec('location');cd()">Location</a>
+  <a onclick="go('contact');cd()">Contact</a>
+</div>
+
+<!-- ════════════════════════════════
+     HOME
+════════════════════════════════ -->
+<div id="pg-home" class="on">
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-circle"></div>
+  <div class="hero-line-v"></div>
+
+  <div class="hero-eyebrow">
+    <div class="t-label">City Café — Fier</div>
+  </div>
+
+  <h1>Coffee<br>in the <em>heart</em><br>of the city.</h1>
+
+  <p class="hero-desc">Fast, quality coffee for people on the move. Your daily stop, right in the center of Fier.</p>
+
+  <div class="hero-btns">
+    <a class="btn btn-black" onclick="sec('menu')">View Menu</a>
+    <a class="btn btn-outline" href="https://maps.app.goo.gl/zyfoveBT29M4XXvP6" target="_blank" rel="noopener">Get Directions</a>
+    <a class="btn btn-wolt" href="https://wolt.com/en/alb/fier/restaurant/city-center" target="_blank" rel="noopener">🛵 Order on Wolt</a>
+  </div>
+
+  <div class="hero-status">
+    <span class="dot" id="dot"></span>
+    <span id="open-txt">Duke kontrolluar…</span>
+  </div>
+</section>
+
+<!-- INFO STRIP -->
+<div id="strip">
+  <div class="strip-inner">
+    <div class="si">
+      <div class="si-lbl">Daily hours</div>
+      <div class="si-val" id="todayH">07:00 – 23:00</div>
+      <div class="si-sub" id="stripSt">—</div>
+    </div>
+    <a class="si tap" href="https://maps.app.goo.gl/zyfoveBT29M4XXvP6" target="_blank" rel="noopener">
+      <div class="si-lbl">Location</div>
+      <div class="si-val">City Center, Fier</div>
+      <div class="si-sub">→ Open in Maps</div>
+    </a>
+    <a class="si tap" href="tel:+355691234567">
+      <div class="si-lbl">Telephone</div>
+      <div class="si-val">+355 69 123 4567</div>
+      <div class="si-sub">→ Call now</div>
+    </a>
+  </div>
+</div>
+
+<!-- MENU PREVIEW -->
+<section id="menu" class="sec rv">
+  <div class="sec-label">Menu</div>
+  <h2>Simple &amp; <em>quality.</em></h2>
+
+  <div class="tabs">
+    <button class="tab on" onclick="mtab(this,'c')">Coffee</button>
+    <button class="tab" onclick="mtab(this,'d')">Cold Drinks</button>
+    <button class="tab" onclick="mtab(this,'f')">Breakfast</button>
+    <button class="tab" onclick="mtab(this,'b')">Beers</button>
+  </div>
+
+  <div class="panel on" id="tab-c">
+    <div class="mrow"><div><div class="mn">Espresso<span class="ptag">Best seller</span></div></div><div class="mp">90L</div></div>
+    <div class="mrow"><div><div class="mn">Macchiato<span class="ptag">Best seller</span></div></div><div class="mp">90L</div></div>
+    <div class="mrow"><div><div class="mn">Cappuccino (Caffe)</div><div class="md">Silky microfoam</div></div><div class="mp">150L</div></div>
+    <div class="mrow"><div><div class="mn">Ginseng</div></div><div class="mp">130L</div></div>
+    <div class="mrow"><div><div class="mn">Latte</div></div><div class="mp">170L</div></div>
+    <div class="mrow"><div><div class="mn">Hot Cocoa</div></div><div class="mp">180L</div></div>
+    <div class="mrow"><div><div class="mn">Hot Chocolate</div></div><div class="mp">180L</div></div>
+  </div>
+  <div class="panel" id="tab-d">
+    <div class="mrow"><div><div class="mn">Iced Latte</div></div><div class="mp">180L</div></div>
+    <div class="mrow"><div><div class="mn">Freddo Espresso</div></div><div class="mp">200L</div></div>
+    <div class="mrow"><div><div class="mn">Frappé</div></div><div class="mp">180L</div></div>
+    <div class="mrow"><div><div class="mn">Freddo Cappuccino</div></div><div class="mp">200L</div></div>
+    <div class="mrow"><div><div class="mn">Freddo Chocolate</div></div><div class="mp">220L</div></div>
+    <div class="mrow"><div><div class="mn">Water</div><div class="md">Still or sparkling 0.5L</div></div><div class="mp">80L</div></div>
+  </div>
+  <div class="panel" id="tab-f">
+    <div class="mrow"><div><div class="mn">Chocolate Croissant</div></div><div class="mp">140L</div></div>
+    <div class="mrow"><div><div class="mn">Pistachio Croissant</div></div><div class="mp">200L</div></div>
+    <div class="mrow"><div><div class="mn">Toast</div></div><div class="mp">140L</div></div>
+    <div class="mrow"><div><div class="mn">Orange Juice</div></div><div class="mp">250L</div></div>
+    <div class="mrow"><div><div class="mn">Apple Juice</div></div><div class="mp">250L</div></div>
+    <div class="mrow"><div><div class="mn">Mix Juice</div><div class="md">Orange, Apple, Carrot, Beetroot</div></div><div class="mp">300L</div></div>
+  </div>
+  <div class="panel" id="tab-b">
+    <div class="mrow"><div><div class="mn">Heineken</div></div><div class="mp">250L</div></div>
+    <div class="mrow"><div><div class="mn">Corona</div></div><div class="mp">350L</div></div>
+    <div class="mrow"><div><div class="mn">Paulaner</div></div><div class="mp">450L</div></div>
+    <div class="mrow"><div><div class="mn">Korça</div></div><div class="mp">180L</div></div>
+    <div class="mrow"><div><div class="mn">Stella Artois</div></div><div class="mp">350L</div></div>
+    <div class="mrow"><div><div class="mn">Bavaria 0%</div></div><div class="mp">300L</div></div>
+  </div>
+
+  <div class="menu-cta">
+    <a class="btn btn-black" onclick="go('menu')">Full Menu →</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHY -->
+<section id="why" class="sec rv">
+  <div class="sec-label">Why City Center</div>
+  <h2>Built for city <em>people.</em></h2>
+  <div class="why-grid">
+    <div class="wi rv d1"><div class="wn">01</div><div class="wt">Fast Service</div><div class="wx">Coffee ready to drink in 90 seconds</div></div>
+    <div class="wi rv d2"><div class="wn">02</div><div class="wt">Central Location</div><div class="wx">Right at the heart of Fier</div></div>
+    <div class="wi rv d3"><div class="wn">03</div><div class="wt">Quality Beans</div><div class="wx">Single origin, freshly roasted every week.</div></div>
+    <div class="wi rv d4"><div class="wn">04</div><div class="wt">Free WiFi</div><div class="wx">Fast connection for work and meetings.</div></div>
+  </div>
+</section>
+
+<!-- WOLT DELIVERY -->
+<div id="wolt-sec" class="rv">
+  <div class="wolt-left">
+    <div class="wolt-badge">Delivery</div>
+    <div class="wolt-title">Order on Wolt</div>
+    <div class="wolt-desc">Coffee at your doorstep — fast and hot</div>
+  </div>
+  <div class="wolt-btn-wrap">
+    <a class="btn btn-wolt-lg" href="https://wolt.com/en/alb/fier/restaurant/city-center" target="_blank" rel="noopener">
+      🛵 &nbsp;Order Now on Wolt
+    </a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- LOCATION -->
+<section id="location" class="sec rv">
+  <div class="sec-label">Find us</div>
+  <h2>We're right <em>here.</em></h2>
+
+  <div class="map-box">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.1!2d19.5581619!3d40.7279274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13455348bd86768b%3A0x7c91ff12629fb45e!2sCity%20Center!5e0!3m2!1sen!2s!4v1700000000000"
+      allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="City Center Café Fier">
+    </iframe>
+  </div>
+
+  <div class="loc-meta">
+    <div class="loc-row">
+      <span class="icon">📍</span>
+      <div><strong>City Center, Fier</strong><small>Albania</small></div>
+    </div>
+    <div class="loc-row">
+      <span class="icon">🕐</span>
+      <div>
+        <strong>07:00 – 23:00</strong>
+        <small>Everyday</small>
+      </div>
+    </div>
+    <a class="loc-row tap" href="https://www.instagram.com/city_center_fier/" target="_blank" rel="noopener">
+      <span class="icon">📸</span>
+      <div><strong>@city_center_fier</strong><small>Instagram</small></div>
+    </a>
+  </div>
+
+  <div class="loc-actions">
+    <a class="btn btn-black btn-full" href="https://maps.app.goo.gl/zyfoveBT29M4XXvP6" target="_blank" rel="noopener">📍 Get Directions</a>
+    <a class="btn btn-wolt btn-full" href="https://wolt.com/en/alb/fier/restaurant/city-center" target="_blank" rel="noopener">🛵 Order on Wolt</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta" class="rv">
+  <h2>Stop by <em>today.</em></h2>
+  <p>Fast, quality coffee — always in the center.</p>
+  <div class="cta-btns">
+    <a class="btn btn-white" onclick="go('menu')">View Menu</a>
+    <a class="btn btn-outline-w" href="https://maps.app.goo.gl/zyfoveBT29M4XXvP6" target="_blank" rel="noopener">Get Directions</a>
+    <a class="btn btn-wolt" href="https://wolt.com/en/alb/fier/restaurant/city-center" target="_blank" rel="noopener">🛵 Wolt Delivery</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div class="ft-logo" onclick="go('home')">City Center Café</div>
+    <div class="ft-links">
+      <a onclick="sec('menu')">Menu</a>
+      <a onclick="sec('location')">Location</a>
+      <a onclick="go('contact')">Contact</a>
+      <a href="https://www.instagram.com/city_center_fier/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+  <div class="ft-copy">© 2025 City Center Café, Fier &nbsp;·&nbsp; Coffee in the heart of the city</div>
+</footer>
+
+</div><!-- /pg-home -->
+
+<!-- ════════════════════════════════
+     FULL MENU
+════════════════════════════════ -->
+<div id="pg-menu">
+<div class="page-wrap">
+  <button class="back-btn" onclick="go('home')">← Back</button>
+  <div class="sec-label" style="margin-bottom:0.85rem">Full Menu</div>
+  <h2>Everything we <em>serve.</em></h2>
+  <p style="margin-top:0.6rem;font-size:0.8rem;color:var(--mid);font-weight:300">Delivery prices on Wolt may differ</p>
+
+  <!-- CATEGORY TABS -->
+  <div class="cat-tabs">
+    <button class="cat-tab on" onclick="ctab(this,'coffee')">☕ Coffee</button>
+    <button class="cat-tab on" onclick="ctab(this,'drinks')">🥤 Cold beverages</button>
+    <button class="cat-tab" onclick="ctab(this,'cold')">❄️ Iced Coffee</button>
+    <button class="cat-tab" onclick="ctab(this,'breakfast')">🥐 Breakfast</button>
+    <button class="cat-tab" onclick="ctab(this,'beers')">🍺 Beers</button>
+    <button class="cat-tab" onclick="ctab(this,'cocktails')">🍹 Cocktails</button>
+    <button class="cat-tab" onclick="ctab(this,'alcohol')">🥃 Alcoholic</button>
+    <button class="cat-tab" onclick="ctab(this,'spritz')">🍷 Spritz</button>
+    
+  </div>
+<!-- COFFEE -->
+<div class="cat-panel on" id="cat-coffee">
+  <div class="fc">
+
+    <div class="mrow"><div><div class="mn">American Caffe</div></div><div class="mp">100L</div></div>
+    <div class="mrow"><div><div class="mn">Bio Tea</div></div><div class="mp">150L</div></div>
+    <div class="mrow"><div><div class="mn">Caffe</div></div><div class="mp">90L</div></div>
+    <div class="mrow"><div><div class="mn">Caffe Latte</div></div><div class="mp">150L</div></div>
+    <div class="mrow"><div><div class="mn">Capuchino Bustin</div></div><div class="mp">180L</div></div>
+    <div class="mrow"><div><div class="mn">Capuchino Caffe</div></div><div class="mp">150L</div></div>
+    <div class="mrow"><div><div class="mn">Correto Caffe</div></div><div class="mp">150L</div></div>
+    <div class="mrow"><div><div class="mn">Decaffeinato</div></div><div class="mp">110L</div></div>
+    <div class="mrow"><div><div class="mn">Ginseng</div></div><div class="mp">130L</div></div>
+    <div class="mrow"><div><div class="mn">Hot Chocolate</div></div><div class="mp">180L</div></div>
+    <div class="mrow"><div><div class="mn">Hot Tea</div></div><div class="mp">90L</div></div>
+    <div class="mrow"><div><div class="mn">Kakao</div></div><div class="mp">180L</div></div>
+    <div class="mrow"><div><div class="mn">Macchiato</div></div><div class="mp">90L</div></div>
+    <div class="mrow"><div><div class="mn">Nescaffe</div></div><div class="mp">170L</div></div>
+    <div class="mrow"><div><div class="mn">Salep</div></div><div class="mp">180L</div></div>
+    <div class="mrow"><div><div class="mn">Short Cacao</div></div><div class="mp">120L</div></div>
+    <div class="mrow"><div><div class="mn">Turkish Caffe</div></div><div class="mp">80L</div></div>
+  </div>
+</div>
+<!-- DRINKS -->
+<div class="cat-panel" id="cat-drinks">
+  <div class="fc">
+    <div class="mrow"><div><div class="mn">Amita</div></div><div class="mp">170L</div></div>
+    <div class="mrow"><div><div class="mn">B52</div></div><div class="mp">250L</div></div>
+    <div class="mrow"><div><div class="mn">Bitter</div></div><div class="mp">100L</div></div>
+    <div class="mrow"><div><div class="mn">Bravo</div></div><div class="mp">180L</div></div>
+    <div class="mrow"><div><div class="mn">Cola</div></div><div class="mp">170L</div></div>
+    <div class="mrow"><div><div class="mn">Crodino</div></div><div class="mp">180L</div></div>
+    <div class="mrow"><div><div class="mn">Fanta</div></div><div class="mp">180L</div></div>
+    <div class="mrow"><div><div class="mn">Ice Tea</div></div><div class="mp">170L</div></div>
+    <div class="mrow"><div><div class="mn">Lemon Soda</div></div><div class="mp">180L</div></div>
+    <div class="mrow"><div><div class="mn">Monin Tea</div></div><div class="mp">200L</div></div>
+    <div class="mrow"><div><div class="mn">Orange Soda</div></div><div class="mp">180L</div></div>
+    <div class="mrow"><div><div class="mn">Red Bull</div></div><div class="mp">300L</div></div>
+    <div class="mrow"><div><div class="mn">Rose Lemonade</div></div><div class="mp">400L</div></div>
+    <div class="mrow"><div><div class="mn">Suko</div></div><div class="mp">100L</div></div>
+    <div class="mrow"><div><div class="mn">Thomas Henry Tonik</div></div><div class="mp">400L</div></div>
+    <div class="mrow"><div><div class="mn">Tonic Water</div></div><div class="mp">180L</div></div>
+    <div class="mrow"><div><div class="mn">Vitamine Water</div></div><div class="mp">150L</div></div>
+    <div class="mrow"><div><div class="mn">Water</div></div><div class="mp">80L</div></div>
+    <div class="mrow"><div><div class="mn">Water Soda</div></div><div class="mp">170L</div></div>
+
+  </div>
+</div>
+
+  <!-- COLD DRINKS -->
+  <div class="cat-panel" id="cat-cold">
+    <div class="fc">
+      <div class="mrow"><div><div class="mn">Iced Latte</div></div><div class="mp">187L</div></div>
+      <div class="mrow"><div><div class="mn">Freddo Espresso</div></div><div class="mp">200L</div></div>
+      <div class="mrow"><div><div class="mn">Freddo Cappuccino</div></div><div class="mp">200L</div></div>
+      <div class="mrow"><div><div class="mn">Freddo Chocolate</div></div><div class="mp">220L</div></div>
+      <div class="mrow"><div><div class="mn">Freddo Cocoa</div></div><div class="mp">200L</div></div>
+      <div class="mrow"><div><div class="mn">Frappé</div></div><div class="mp">180L</div></div>
+    </div>
+  </div>
+
+  <!-- BREAKFAST -->
+  <div class="cat-panel" id="cat-breakfast">
+    <div class="fc">
+      <div class="mrow"><div><div class="mn">Chocolate Croissant</div></div><div class="mp">140L</div></div>
+      <div class="mrow"><div><div class="mn">Pistachio Croissant</div></div><div class="mp">200L</div></div>
+      <div class="mrow"><div><div class="mn">Toast</div></div><div class="mp">140L</div></div>
+      <div class="mrow"><div><div class="mn">Orange Juice</div></div><div class="mp">250L</div></div>
+      <div class="mrow"><div><div class="mn">Apple Juice</div></div><div class="mp">250L</div></div>
+      <div class="mrow"><div><div class="mn">Mix Juice</div><div class="md">Orange, Apple, Carrot, Beetroot</div></div><div class="mp">300L</div></div>
+    </div>
+  </div>
+
+  <!-- BEERS -->
+  <div class="cat-panel" id="cat-beers">
+    <div class="fc">
+      <div class="mrow"><div><div class="mn">Korça</div></div><div class="mp">180L</div></div>
+      <div class="mrow"><div><div class="mn">Heineken</div></div><div class="mp">250L</div></div>
+      <div class="mrow"><div><div class="mn">Corona</div></div><div class="mp">350L</div></div>
+      <div class="mrow"><div><div class="mn">Black Korca</div></div><div class="mp">300L</div></div>
+      <div class="mrow"><div><div class="mn">Stella Artois</div></div><div class="mp">350L</div></div>
+      <div class="mrow"><div><div class="mn">Paulaner</div></div><div class="mp">450L</div></div>
+      <div class="mrow"><div><div class="mn">Bavaria 0%</div><div class="md">Non-alcoholic</div></div><div class="mp">300L</div></div>
+    </div>
+  </div>
+
+  <!-- COCKTAILS -->
+<div class="cat-panel" id="cat-cocktails">
+  <div class="fc">
+
+    <div class="mrow"><div><div class="mn">AMF</div></div><div class="mp">600L</div></div>
+    <div class="mrow"><div><div class="mn">Amaretto Sour</div></div><div class="mp">500L</div></div>
+    <div class="mrow"><div><div class="mn">Analkolik</div></div><div class="mp">450L</div></div>
+    <div class="mrow"><div><div class="mn">Caipinero</div></div><div class="mp">500L</div></div>
+    <div class="mrow"><div><div class="mn">Caipirosca</div></div><div class="mp">500L</div></div>
+    <div class="mrow"><div><div class="mn">Cosmopolitan</div></div><div class="mp">550L</div></div>
+    <div class="mrow"><div><div class="mn">Daiquiri</div></div><div class="mp">500L</div></div>
+    <div class="mrow"><div><div class="mn">Eleonora</div></div><div class="mp">700L</div></div>
+    <div class="mrow"><div><div class="mn">Espresso Martini</div></div><div class="mp">500L</div></div>
+    <div class="mrow"><div><div class="mn">Long Island</div></div><div class="mp">600L</div></div>
+    <div class="mrow"><div><div class="mn">Margarita</div></div><div class="mp">450L</div></div>
+    <div class="mrow"><div><div class="mn">Mojito</div></div><div class="mp">550L</div></div>
+    <div class="mrow"><div><div class="mn">Negroni</div></div><div class="mp">550L</div></div>
+    <div class="mrow"><div><div class="mn">Old Fashion</div></div><div class="mp">600L</div></div>
+    <div class="mrow"><div><div class="mn">Pornstar Martini</div></div><div class="mp">600L</div></div>
+    <div class="mrow"><div><div class="mn">Rum Sour</div></div><div class="mp">550L</div></div>
+    <div class="mrow"><div><div class="mn">Sex on the Beach</div></div><div class="mp">550L</div></div>
+    <div class="mrow"><div><div class="mn">Tequila Sunrise</div></div><div class="mp">500L</div></div>
+    <div class="mrow"><div><div class="mn">Vodka Sour</div></div><div class="mp">500L</div></div>
+    <div class="mrow"><div><div class="mn">Cuba Libre</div></div><div class="mp">500L</div></div>
+
+  </div>
+</div>
+<div class="cat-panel" id="cat-spritz">
+  <div class="fc">
+
+    <div class="mrow"><div><div class="mn">Americano</div></div><div class="mp">450L</div></div>
+    <div class="mrow"><div><div class="mn">Aperol Spritz</div></div><div class="mp">450L</div></div>
+    <div class="mrow"><div><div class="mn">Campari Spritz</div></div><div class="mp">450L</div></div>
+    <div class="mrow"><div><div class="mn">Mix Spritz</div></div><div class="mp">500L</div></div>
+    <div class="mrow"><div><div class="mn">Hugo</div></div><div class="mp">450L</div></div>
+    <div class="mrow"><div><div class="mn">Limoncello</div></div><div class="mp">250L</div></div>
+
+  </div>
+</div>
+
+  <!-- ALCOHOLIC — with sub-categories -->
+  <div class="cat-panel" id="cat-alcohol">
+    <div class="subcat-tabs">
+      <button class="subcat-tab on" onclick="stab(this,'gin')">Gin</button>
+      <button class="subcat-tab" onclick="stab(this,'cognac')">Cognac</button>
+      <button class="subcat-tab" onclick="stab(this,'whiskey')">Whiskey</button>
+      <button class="subcat-tab" onclick="stab(this,'vodka')">Vodka</button>
+      <button class="subcat-tab" onclick="stab(this,'tequila')">Tequila</button>
+      <button class="subcat-tab" onclick="stab(this,'rum')">Rum</button>
+      <button class="subcat-tab" onclick="stab(this,'ver')">Wine</button>
+      <button class="subcat-tab" onclick="stab(this,'amaro')">Amaro</button>
+      
+    </div>
+
+    <div class="subcat-panel on" id="sub-gin">
+      <div class="fc">
+        <div class="mrow"><div><div class="mn">Gordon's</div></div><div class="mp">350L</div></div>
+        <div class="mrow"><div><div class="mn">Beefeater</div></div><div class="mp">400L</div></div>
+        <div class="mrow"><div><div class="mn">Tanqueray</div></div><div class="mp">450L</div></div>
+        <div class="mrow"><div><div class="mn">Hendrick's</div></div><div class="mp">550L</div></div>
+        <div class="mrow"><div><div class="mn">Bombay Sapphire</div></div><div class="mp">450L</div></div>
+      </div>
+    </div>
+
+    <div class="subcat-panel" id="sub-cognac">
+      <div class="fc">
+        <div class="mrow"><div><div class="mn">Metaxa 5★</div></div><div class="mp">400L</div></div>
+        <div class="mrow"><div><div class="mn">Metaxa 7★</div></div><div class="mp">500L</div></div>
+        <div class="mrow"><div><div class="mn">Hennessy VS</div></div><div class="mp">600L</div></div>
+        <div class="mrow"><div><div class="mn">Metaxa 12★</div></div><div class="mp">700L</div></div>
+      </div>
+    </div>
+
+    <div class="subcat-panel" id="sub-whiskey">
+      <div class="fc">
+       
+    <div class="mrow"><div><div class="mn">Black Johnny</div></div><div class="mp">400L</div></div>
+    <div class="mrow"><div><div class="mn">Cardhu</div></div><div class="mp">500L</div></div>
+    <div class="mrow"><div><div class="mn">Chivas 12*</div></div><div class="mp">450L</div></div>
+    <div class="mrow"><div><div class="mn">Chivas 18*</div></div><div class="mp">950L</div></div>
+    <div class="mrow"><div><div class="mn">Cutty Sork</div></div><div class="mp">350L</div></div>
+    <div class="mrow"><div><div class="mn">Dimple</div></div><div class="mp">400L</div></div>
+    <div class="mrow"><div><div class="mn">Glen Fiddich 12*</div></div><div class="mp">550L</div></div>
+    <div class="mrow"><div><div class="mn">Glen Fiddich 15*</div></div><div class="mp">800L</div></div>
+    <div class="mrow"><div><div class="mn">Gold Johnny</div></div><div class="mp">550L</div></div>
+    <div class="mrow"><div><div class="mn">J&B</div></div><div class="mp">300L</div></div>
+    <div class="mrow"><div><div class="mn">Jack Daniel's</div></div><div class="mp">400L</div></div>
+    <div class="mrow"><div><div class="mn">Red Johnny</div></div><div class="mp">300L</div></div>
+    <div class="mrow"><div><div class="mn">Talisker</div></div><div class="mp">700L</div></div>
+    <div class="mrow"><div><div class="mn">Lagavulin</div></div><div class="mp">800L</div></div>
+
+  </div>
+</div>
+
+    <div class="subcat-panel" id="sub-vodka">
+      <div class="fc">
+      
+ <div class="mrow"><div><div class="mn">Absolut</div></div><div class="mp">350L</div></div>
+    <div class="mrow"><div><div class="mn">Belvedere</div></div><div class="mp">600L</div></div>
+    <div class="mrow"><div><div class="mn">Grey Goose</div></div><div class="mp">650L</div></div>
+    <div class="mrow"><div><div class="mn">Puschin</div></div><div class="mp">300L</div></div>
+    <div class="mrow"><div><div class="mn">Smirnoff</div></div><div class="mp">250L</div></div>
+    <div class="mrow"><div><div class="mn">Ursus</div></div><div class="mp">300L</div></div>
+    <div class="mrow"><div><div class="mn">Shots</div></div><div class="mp">200L</div></div>
+</div>
+    </div>
+
+    <div class="subcat-panel" id="sub-tequila">
+      <div class="fc">
+        <div class="mrow"><div><div class="mn">Sierra</div></div><div class="mp">300L</div></div>
+        <div class="mrow"><div><div class="mn">Patron</div></div><div class="mp">800L</div></div>
+        <div class="mrow"><div><div class="mn">Shots</div></div><div class="mp">200L</div></div>
+      </div>
+    </div>
+
+    <div class="subcat-panel" id="sub-rum">
+      <div class="fc">
+        <div class="mrow"><div><div class="mn">Bacardi Carta Blanca</div></div><div class="mp">350L</div></div>
+        <div class="mrow"><div><div class="mn">Captain Morgan</div></div><div class="mp">400L</div></div>
+        <div class="mrow"><div><div class="mn">Havana Club 7</div></div><div class="mp">500L</div></div>
+        <div class="mrow"><div><div class="mn">Malibu</div></div><div class="mp">400L</div></div>
+      </div>
+    </div>
+    
+    <div class="subcat-panel" id="sub-ver">
+      <div class="fc">
+        <div class="mrow"><div><div class="mn">Glass of red wine</div></div><div class="mp">250L</div></div>
+        <div class="mrow"><div><div class="mn">Glass of white wine</div></div><div class="mp">250L</div></div>
+      </div>
+    </div>
+    <div class="subcat-panel" id="sub-amaro">
+  <div class="fc">
+
+    <div class="mrow"><div><div class="mn">Amaro Averna</div></div><div class="mp">300L</div></div>
+    <div class="mrow"><div><div class="mn">Amaro Del Capo</div></div><div class="mp">350L</div></div>
+    <div class="mrow"><div><div class="mn">Amaro Montenegro</div></div><div class="mp">350L</div></div>
+    <div class="mrow"><div><div class="mn">Baileys</div></div><div class="mp">250L</div></div>
+    <div class="mrow"><div><div class="mn">Dissarono</div></div><div class="mp">350L</div></div>
+    <div class="mrow"><div><div class="mn">Jagermeister</div></div><div class="mp">350L</div></div>
+    <div class="mrow"><div><div class="mn">Sambuca</div></div><div class="mp">250L</div></div>
+    <div class="mrow"><div><div class="mn">Martini Rosso</div></div><div class="mp">300L</div></div>
+    <div class="mrow"><div><div class="mn">Fernet Branca</div></div><div class="mp">300L</div></div>
+
+  </div>
+</div>
+``
+  </div>
+
+  <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.6rem">
+    <a class="btn btn-wolt btn-full" href="https://wolt.com/en/alb/fier/restaurant/city-center" target="_blank" rel="noopener">🛵 Order on Wolt</a>
+    <button class="back-btn" onclick="go('home')" style="margin:0.5rem 0 0">← Back to Home</button>
+  </div>
+</div>
+</div>
+
+<!-- ════════════════════════════════
+     CONTACT
+════════════════════════════════ -->
+<div id="pg-contact">
+<div class="page-wrap" style="max-width:720px">
+  <button class="back-btn" onclick="go('home')">← Back</button>
+  <div class="sec-label" style="margin-bottom:0.85rem">Contact</div>
+  <h2>Get in <em>touch.</em></h2>
+
+  <div class="contact-cards">
+    <div class="cc">
+      <div class="cc-lbl">Contact</div>
+      <a class="cl tap" href="tel:+355691234567"><span class="icon">📞</span><div><strong>+355 69 123 4567</strong><small>Tap to call</small></div></a>
+      <a class="cl tap" href="https://www.instagram.com/city_center_fier/" target="_blank" rel="noopener"><span class="icon">📸</span><div><strong>@city_center_fier</strong><small>Instagram</small></div></a>
+      <a class="cl tap" href="https://wolt.com/en/alb/fier/restaurant/city-center" target="_blank" rel="noopener"><span class="icon">🛵</span><div><strong>Order on Wolt</strong><small>Delivery</small></div></a>
+    </div>
+    <div class="cc">
+      <div class="cc-lbl">Orari</div>
+      <div class="cl"><span class="icon">📅</span><div><strong>Çdo ditë</strong><small>07:00 – 23:00</small></div></div>
+    </div>
+    <div class="cc">
+      <div class="cc-lbl">Vendndodhja</div>
+      <div class="cl"><span class="icon">📍</span><div><strong>City Center, Fier</strong><small>Albania</small></div></div>
+      <a class="cl tap" href="https://maps.app.goo.gl/zyfoveBT29M4XXvP6" target="_blank" rel="noopener"><span class="icon">🗺️</span><div><strong>Open in Google Maps</strong><small>Get Directions</small></div></a>
+    </div>
+  </div>
+
+  <div class="form-wrap">
+    <div class="sec-label" style="margin-bottom:1.1rem">Na dërgoni mesazh</div>
+    <div class="form-row" id="cform">
+      <div class="ff"><label>Emri</label><input type="text" id="fn" placeholder="Emri juaj" autocomplete="name"></div>
+      <div class="ff"><label>Email</label><input type="email" id="fe" placeholder="email@example.com" autocomplete="email"></div>
+      <div class="ff"><label>Subjekti</label><input type="text" id="fs" placeholder="Catering, rezervim…"></div>
+      <div class="ff"><label>Telefon (opsional)</label><input type="tel" id="fp" placeholder="+355 69 …" autocomplete="tel"></div>
+      <div class="ff full"><label>Mesazhi</label><textarea id="fm" rows="4" placeholder="Shkruani mesazhin tuaj…"></textarea></div>
+      <div class="ff full">
+        <button class="btn btn-black btn-full" onclick="submitForm()">Dërgo Mesazhin →</button>
+        <p style="font-size:0.72rem;color:var(--mid);margin-top:0.5rem">Përgjigjemi brenda 24 orëve</p>
+      </div>
+    </div>
+    <div class="form-success" id="fsuccess">
+      <div style="font-size:1.3rem;margin-bottom:0.35rem">✅</div>
+      <div style="font-weight:600;margin-bottom:0.2rem">Mesazhi u dërgua!</div>
+      <div style="font-size:0.8rem;color:var(--mid)">Do t'ju përgjigjemi brenda 24 orëve.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ════════ STICKY BOTTOM BAR ════════ -->
+<div id="mob-bar">
+  <a class="mb mb-dir" href="https://maps.app.goo.gl/zyfoveBT29M4XXvP6" target="_blank" rel="noopener">
+    <span class="mb-icon">📍</span>
+    <span class="mb-lbl">Directions</span>
+  </a>
+  <a class="mb mb-menu" onclick="go('menu')">
+    <span class="mb-icon">☕</span>
+    <span class="mb-lbl">Menu</span>
+  </a>
+  <a class="mb mb-wolt" href="https://wolt.com/en/alb/fier/restaurant/city-center" target="_blank" rel="noopener">
+    <span class="mb-icon">🛵</span>
+    <span class="mb-lbl">Wolt</span>
+  </a>
+</div>
+
+<script>
+/* ROUTER */
+function go(p){
+  ['home','menu','contact'].forEach(x=>
+    document.getElementById('pg-'+x).classList.toggle('on',x===p)
+  );
+  window.scrollTo({top:0,behavior:'instant'});
+  const f=document.querySelector('footer');
+  if(f) f.style.display=p==='home'?'':'none';
+}
+function sec(id){
+  go('home');
+  setTimeout(()=>{
+    const el=document.getElementById(id);
+    if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+  },60);
+}
+
+/* BURGER */
+function toggleMenu(){
+  document.getElementById('burger').classList.toggle('open');
+  document.getElementById('drawer').classList.toggle('open');
+}
+function cd(){
+  document.getElementById('burger').classList.remove('open');
+  document.getElementById('drawer').classList.remove('open');
+}
+
+/* NAV SCROLL */
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('up',window.scrollY>20);
+},{passive:true});
+
+/* HOME PREVIEW TABS */
+function mtab(btn,id){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('tab-'+id).classList.add('on');
+}
+
+/* FULL MENU CATEGORY TABS */
+function ctab(btn,id){
+  document.querySelectorAll('.cat-tab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.cat-panel').forEach(p=>p.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('cat-'+id).classList.add('on');
+}
+
+/* ALCOHOL SUB-CATEGORY TABS */
+function stab(btn,id){
+  document.querySelectorAll('.subcat-tab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.subcat-panel').forEach(p=>p.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('sub-'+id).classList.add('on');
+}
+
+/* STATUS */
+function buildStatus(){
+  const now=new Date(),d=now.getDay(),m=now.getHours()*60+now.getMinutes();
+  let o=7*60,c=23*60;
+  const fmt=x=>`${String(Math.floor(x/60)).padStart(2,'0')}:${String(x%60).padStart(2,'0')}`;
+  document.getElementById('todayH').textContent=`${fmt(o)} – ${fmt(c)}`;
+  const open=m>=o&&m<c, left=c-m;
+  const dot=document.getElementById('dot');
+  const txt=document.getElementById('open-txt');
+  const sub=document.getElementById('stripSt');
+  if(open&&left<=60){
+    dot.className='dot warn';
+    txt.textContent=`Open · Closes in ${left} min`;
+    sub.innerHTML=`<span style="color:var(--amber)">⚠ Closing soon</span>`;
+  } else if(open){
+    dot.className='dot open';
+    txt.textContent=`Open now · Closes at ${fmt(c)}`;
+    sub.innerHTML=`<span style="color:var(--green)">● Open now</span>`;
+  } else {
+    dot.className='dot closed';
+    txt.textContent=`Closed · Opens at ${fmt(o)}`;
+    sub.innerHTML=`<span style="color:var(--red)">● Closed</span>`;
+  }
+}
+
+/* FORM */
+function submitForm(){
+  const n=document.getElementById('fn').value.trim();
+  const e=document.getElementById('fe').value.trim();
+  const msg=document.getElementById('fm').value.trim();
+  if(!n||!e||!msg){alert('Ju lutemi plotësoni emrin, emailin dhe mesazhin.');return;}
+  if(!/\S+@\S+\.\S+/.test(e)){alert('Email i pavlefshëm.');return;}
+  document.getElementById('cform').style.display='none';
+  document.getElementById('fsuccess').style.display='block';
+}
+
+/* REVEAL */
+function initReveal(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+    });
+  },{threshold:0.07,rootMargin:'0px 0px -20px 0px'});
+  document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+}
+
+buildStatus();
+go('home');
+setTimeout(initReveal,100);
+</script>
+</body>
+</html>
