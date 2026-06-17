@@ -597,7 +597,7 @@ footer{
     <small>Café — Fier</small>
   </div>
   <ul class="nav-desktop">
-    <li><a onclick="sec('menu')">Menu</a></li>
+    <li><a onclick="go('menu')">Menu</a></li>
     <li><a onclick="sec('location')">Location</a></li>
     <li><a onclick="go('contact')">Contact</a></li>
   </ul>
@@ -606,7 +606,7 @@ footer{
   </button>
 </nav>
 <div class="drawer" id="drawer">
-  <a onclick="sec('menu');cd()">Menu</a>
+  <a onclick="go('menu');cd()">Menu</a>
   <a onclick="sec('location');cd()">Location</a>
   <a onclick="go('contact');cd()">Contact</a>
 </div>
@@ -630,7 +630,7 @@ footer{
   <p class="hero-desc">Fast, quality coffee for people on the move. Your daily stop, right in the center of Fier.</p>
 
   <div class="hero-btns">
-    <a class="btn btn-black" onclick="sec('menu')">View Menu</a>
+    <a class="btn btn-black" onclick="go('menu')">View Menu</a>
     <a class="btn btn-outline" href="https://maps.app.goo.gl/zyfoveBT29M4XXvP6" target="_blank" rel="noopener">Get Directions</a>
     <a class="btn btn-wolt" href="https://wolt.com/en/alb/fier/restaurant/city-center" target="_blank" rel="noopener">🛵 Order on Wolt</a>
   </div>
@@ -679,14 +679,14 @@ footer{
     <div class="mrow"><div><div class="mn">Macchiato<span class="ptag">Best seller</span></div></div><div class="mp">90L</div></div>
     <div class="mrow"><div><div class="mn">Cappuccino (Caffe)</div></div><div class="mp">150L</div></div>
     <div class="mrow"><div><div class="mn">Ginseng</div></div><div class="mp">130L</div></div>
-    <div class="mrow"><div><div class="mn">Latte</div></div><div class="mp">170L</div></div>
+    <div class="mrow"><div><div class="mn">Latte</div></div><div class="mp">150L</div></div>
     <div class="mrow"><div><div class="mn">Hot Cocoa</div></div><div class="mp">180L</div></div>
     <div class="mrow"><div><div class="mn">Hot Chocolate</div></div><div class="mp">180L</div></div>
   </div>
   <div class="panel" id="tab-d">
-    <div class="mrow"><div><div class="mn">Iced Latte</div></div><div class="mp">180L</div></div>
-    <div class="mrow"><div><div class="mn">Freddo Espresso</div></div><div class="mp">200L</div></div>
-    <div class="mrow"><div><div class="mn">Frappé</div></div><div class="mp">180L</div></div>
+    <div class="mrow"><div><div class="mn">Iced Latte</div></div><div class="mp">170L</div></div>
+    <div class="mrow"><div><div class="mn">Freddo Espresso</div></div><div class="mp">180L</div></div>
+    <div class="mrow"><div><div class="mn">Frappé</div></div><div class="mp">170L</div></div>
     <div class="mrow"><div><div class="mn">Freddo Cappuccino</div></div><div class="mp">200L</div></div>
     <div class="mrow"><div><div class="mn">Freddo Chocolate</div></div><div class="mp">220L</div></div>
     <div class="mrow"><div><div class="mn">Water</div><div class="md">Still or sparkling 0.5L</div></div><div class="mp">80L</div></div>
@@ -702,9 +702,9 @@ footer{
   <div class="panel" id="tab-b">
     <div class="mrow"><div><div class="mn">Heineken</div></div><div class="mp">250L</div></div>
     <div class="mrow"><div><div class="mn">Corona</div></div><div class="mp">350L</div></div>
-    <div class="mrow"><div><div class="mn">Paulaner</div></div><div class="mp">450L</div></div>
+    <div class="mrow"><div><div class="mn">Paulaner</div></div><div class="mp">400L</div></div>
     <div class="mrow"><div><div class="mn">Korça</div></div><div class="mp">180L</div></div>
-    <div class="mrow"><div><div class="mn">Stella Artois</div></div><div class="mp">350L</div></div>
+    <div class="mrow"><div><div class="mn">Stella Artois</div></div><div class="mp">300L</div></div>
     <div class="mrow"><div><div class="mn">Bavaria 0%</div></div><div class="mp">300L</div></div>
   </div>
 
@@ -835,7 +835,7 @@ footer{
   <div class="fc">
 
     <div class="mrow"><div><div class="mn">American Caffe</div></div><div class="mp">100L</div></div>
-    <div class="mrow"><div><div class="mn">Bio Tea</div></div><div class="mp">150L</div></div>
+    <div class="mrow"><div><div class="mn">Bio Tea</div></div><div class="mp">170L</div></div>
     <div class="mrow"><div><div class="mn">Caffe</div></div><div class="mp">90L</div></div>
     <div class="mrow"><div><div class="mn">Caffe Latte</div></div><div class="mp">150L</div></div>
     <div class="mrow"><div><div class="mn">Capuchino Bustin</div></div><div class="mp">180L</div></div>
@@ -860,7 +860,7 @@ footer{
     <div class="mrow"><div><div class="mn">B52</div></div><div class="mp">250L</div></div>
     <div class="mrow"><div><div class="mn">Bitter</div></div><div class="mp">100L</div></div>
     <div class="mrow"><div><div class="mn">Bravo</div></div><div class="mp">180L</div></div>
-    <div class="mrow"><div><div class="mn">Cola</div></div><div class="mp">170L</div></div>
+    <div class="mrow"><div><div class="mn">Cola</div></div><div class="mp">180L</div></div>
     <div class="mrow"><div><div class="mn">Crodino</div></div><div class="mp">180L</div></div>
     <div class="mrow"><div><div class="mn">Fanta</div></div><div class="mp">180L</div></div>
     <div class="mrow"><div><div class="mn">Ice Tea</div></div><div class="mp">170L</div></div>
@@ -882,12 +882,14 @@ footer{
   <!-- COLD DRINKS -->
   <div class="cat-panel" id="cat-cold">
     <div class="fc">
-      <div class="mrow"><div><div class="mn">Iced Latte</div></div><div class="mp">187L</div></div>
-      <div class="mrow"><div><div class="mn">Freddo Espresso</div></div><div class="mp">200L</div></div>
+      <div class="mrow"><div><div class="mn">Iced Latte</div></div><div class="mp">170L</div></div>
+      <div class="mrow"><div><div class="mn">Freddo Espresso</div></div><div class="mp">180L</div></div>
       <div class="mrow"><div><div class="mn">Freddo Cappuccino</div></div><div class="mp">200L</div></div>
       <div class="mrow"><div><div class="mn">Freddo Chocolate</div></div><div class="mp">220L</div></div>
-      <div class="mrow"><div><div class="mn">Freddo Cocoa</div></div><div class="mp">200L</div></div>
-      <div class="mrow"><div><div class="mn">Frappé</div></div><div class="mp">180L</div></div>
+      <div class="mrow"><div><div class="mn">Freddo Cocoa</div></div><div class="mp">180L</div></div>
+      <div class="mrow"><div><div class="mn">Shekerato</div></div><div class="mp">150L</div></div>
+      <div class="mrow"><div><div class="mn">Milkshake</div></div><div class="mp">200L</div></div>
+      <div class="mrow"><div><div class="mn">Frappé</div></div><div class="mp">170L</div></div>
     </div>
   </div>
 
@@ -910,8 +912,8 @@ footer{
       <div class="mrow"><div><div class="mn">Heineken</div></div><div class="mp">250L</div></div>
       <div class="mrow"><div><div class="mn">Corona</div></div><div class="mp">350L</div></div>
       <div class="mrow"><div><div class="mn">Black Korca</div></div><div class="mp">300L</div></div>
-      <div class="mrow"><div><div class="mn">Stella Artois</div></div><div class="mp">350L</div></div>
-      <div class="mrow"><div><div class="mn">Paulaner</div></div><div class="mp">450L</div></div>
+      <div class="mrow"><div><div class="mn">Stella Artois</div></div><div class="mp">300L</div></div>
+      <div class="mrow"><div><div class="mn">Paulaner</div></div><div class="mp">400L</div></div>
       <div class="mrow"><div><div class="mn">Bavaria 0%</div><div class="md">Non-alcoholic</div></div><div class="mp">300L</div></div>
     </div>
   </div>
@@ -920,7 +922,7 @@ footer{
 <div class="cat-panel" id="cat-cocktails">
   <div class="fc">
 
-    <div class="mrow"><div><div class="mn">AMF</div></div><div class="mp">600L</div></div>
+    <div class="mrow"><div><div class="mn">AMF</div></div><div class="mp">700L</div></div>
     <div class="mrow"><div><div class="mn">Amaretto Sour</div></div><div class="mp">500L</div></div>
     <div class="mrow"><div><div class="mn">Analkolik</div></div><div class="mp">450L</div></div>
     <div class="mrow"><div><div class="mn">Caipinero</div></div><div class="mp">500L</div></div>
@@ -939,6 +941,8 @@ footer{
     <div class="mrow"><div><div class="mn">Sex on the Beach</div></div><div class="mp">550L</div></div>
     <div class="mrow"><div><div class="mn">Tequila Sunrise</div></div><div class="mp">500L</div></div>
     <div class="mrow"><div><div class="mn">Vodka Sour</div></div><div class="mp">500L</div></div>
+    <div class="mrow"><div><div class="mn">Rama 5</div></div><div class="mp">600L</div></div>
+    <div class="mrow"><div><div class="mn">Pina colada</div></div><div class="mp">600L</div></div>
     <div class="mrow"><div><div class="mn">Cuba Libre</div></div><div class="mp">500L</div></div>
 
   </div>
@@ -972,19 +976,21 @@ footer{
 
     <div class="subcat-panel on" id="sub-gin">
       <div class="fc">
-        <div class="mrow"><div><div class="mn">Gordon's</div></div><div class="mp">350L</div></div>
-        <div class="mrow"><div><div class="mn">Beefeater</div></div><div class="mp">400L</div></div>
-        <div class="mrow"><div><div class="mn">Tanqueray</div></div><div class="mp">450L</div></div>
-        <div class="mrow"><div><div class="mn">Hendrick's</div></div><div class="mp">550L</div></div>
-        <div class="mrow"><div><div class="mn">Bombay Sapphire</div></div><div class="mp">450L</div></div>
+        <div class="mrow"><div><div class="mn">Gordon's</div></div><div class="mp">300L</div></div>
+        <div class="mrow"><div><div class="mn">Gin Mare</div></div><div class="mp">600L</div></div>
+        <div class="mrow"><div><div class="mn">Tanqueray</div></div><div class="mp">300L</div></div>
+        <div class="mrow"><div><div class="mn">Hendrick's</div></div><div class="mp">500L</div></div>
+        <div class="mrow"><div><div class="mn">Bombay Sapphire</div></div><div class="mp">400L</div></div>
       </div>
     </div>
 
     <div class="subcat-panel" id="sub-cognac">
       <div class="fc">
-        <div class="mrow"><div><div class="mn">Metaxa 5★</div></div><div class="mp">400L</div></div>
-        <div class="mrow"><div><div class="mn">Metaxa 7★</div></div><div class="mp">500L</div></div>
-        <div class="mrow"><div><div class="mn">Hennessy VS</div></div><div class="mp">600L</div></div>
+        <div class="mrow"><div><div class="mn">Metaxa 5★</div></div><div class="mp">300L</div></div>
+        <div class="mrow"><div><div class="mn">Metaxa 7★</div></div><div class="mp">400L</div></div>
+        <div class="mrow"><div><div class="mn">Hennessy </div></div><div class="mp">600L</div></div>
+        <div class="mrow"><div><div class="mn">Vechia Romanga </div></div><div class="mp">400L</div></div>
+        <div class="mrow"><div><div class="mn">Courwoiser </div></div><div class="mp">450L</div></div>
         <div class="mrow"><div><div class="mn">Metaxa 12★</div></div><div class="mp">700L</div></div>
       </div>
     </div>
@@ -1033,10 +1039,11 @@ footer{
 
     <div class="subcat-panel" id="sub-rum">
       <div class="fc">
-        <div class="mrow"><div><div class="mn">Bacardi Carta Blanca</div></div><div class="mp">350L</div></div>
-        <div class="mrow"><div><div class="mn">Captain Morgan</div></div><div class="mp">400L</div></div>
-        <div class="mrow"><div><div class="mn">Havana Club 7</div></div><div class="mp">500L</div></div>
-        <div class="mrow"><div><div class="mn">Malibu</div></div><div class="mp">400L</div></div>
+        <div class="mrow"><div><div class="mn">Bacardi Blanca</div></div><div class="mp">300L</div></div>
+        <div class="mrow"><div><div class="mn">Bacardi Negro</div></div><div class="mp">300L</div></div>
+        <div class="mrow"><div><div class="mn">Dictactor</div></div><div class="mp">550L</div></div>
+        <div class="mrow"><div><div class="mn">Don Papa</div></div><div class="mp">550L</div></div>
+        <div class="mrow"><div><div class="mn">Malibu</div></div><div class="mp">300L</div></div>
       </div>
     </div>
     
